@@ -1,0 +1,31 @@
+{
+  "name": "phone-home",
+  "version": "1.0.0",
+  "description": "This serverless application provides a phone home endpoint for recording contacts from another deployed application.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node_modules/gulp/bin/gulp.js",
+    "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $S3_BUCKET",
+    "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-phone-home-$USER"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanchiu/phone-home.git"
+  },
+  "keywords": [
+    "Serverless",
+    "Phone-home"
+  ],
+  "author": "Evan Chiu <evan@evanchiu.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanchiu/phone-home/issues"
+  },
+  "homepage": "https://github.com/evanchiu/phone-home#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-zip": "^4.0.0",
+    "jshint": "^2.9.5"
+  }
+}
