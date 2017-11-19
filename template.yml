@@ -10,7 +10,10 @@
         Handler: src/index.handler
         Runtime: nodejs6.10
         CodeUri: build/phone-home.zip
-        Policies: AmazonDynamoDBFullAccess
+        Policies:
+          - DynamoDBCrudPolicy:
+              TableName:
+                Ref: eventTable
         Timeout: 10
         Events:
           get:
