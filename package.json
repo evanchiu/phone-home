@@ -1,11 +1,11 @@
 {
   "name": "phone-home",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This serverless application provides a phone home endpoint for recording contacts from another deployed application.",
   "main": "src/index.js",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
-    "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $S3_BUCKET",
+    "package": "aws cloudformation package --template-file template.yml --output-template-file packaged-template.yml --s3-bucket $CODE_BUCKET",
     "deploy": "aws cloudformation deploy --template-file packaged-template.yml --capabilities CAPABILITY_IAM --stack-name dev-phone-home-$USER"
   },
   "repository": {
