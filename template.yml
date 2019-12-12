@@ -8,7 +8,7 @@
       Properties:
         Description: Phone Home endpoint (proxy all paths to this function)
         Handler: src/index.handler
-        Runtime: nodejs8.10
+        Runtime: nodejs12.x
         CodeUri: build/phone-home.zip
         Policies:
           - DynamoDBCrudPolicy:
